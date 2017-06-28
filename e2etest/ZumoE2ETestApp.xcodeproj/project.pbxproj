@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0044609E1C84D96600CB5A0F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0044609D1C84D96600CB5A0F /* WebKit.framework */; };
+		5C6CE5751F03C4FF002C7A1B /* ADAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6CE5741F03C4FF002C7A1B /* ADAL.framework */; };
+		5C6CE5761F03C4FF002C7A1B /* ADAL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6CE5741F03C4FF002C7A1B /* ADAL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		872B02BF1672A73B003613A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02BE1672A73B003613A1 /* UIKit.framework */; };
 		872B02C11672A73B003613A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02C01672A73B003613A1 /* Foundation.framework */; };
 		872B02C31672A73B003613A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02C21672A73B003613A1 /* CoreGraphics.framework */; };
@@ -43,8 +45,23 @@
 		A3AD0B6D1BED91F900288E3D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AD0B6C1BED91F900288E3D /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5C6CE5771F03C4FF002C7A1B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5C6CE5761F03C4FF002C7A1B /* ADAL.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0044609D1C84D96600CB5A0F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5C6CE5741F03C4FF002C7A1B /* ADAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ADAL.framework; sourceTree = "<group>"; };
 		806A17C41EEAA18100230146 /* ZumoE2ETestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZumoE2ETestApp.entitlements; sourceTree = "<group>"; };
 		872B02BA1672A73B003613A1 /* ZumoE2ETestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZumoE2ETestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872B02BE1672A73B003613A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -114,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C6CE5751F03C4FF002C7A1B /* ADAL.framework in Frameworks */,
 				0044609E1C84D96600CB5A0F /* WebKit.framework in Frameworks */,
 				A37A1C7A1C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework in Frameworks */,
 				A2B509DD199ABF1A00A914CF /* MessageUI.framework in Frameworks */,
@@ -129,6 +147,7 @@
 		872B02AF1672A73B003613A1 = {
 			isa = PBXGroup;
 			children = (
+				5C6CE5741F03C4FF002C7A1B /* ADAL.framework */,
 				872B02C41672A73B003613A1 /* ZumoE2ETestApp */,
 				872B02BD1672A73B003613A1 /* Frameworks */,
 				872B02BB1672A73B003613A1 /* Products */,
@@ -269,6 +288,7 @@
 				872B02B61672A73B003613A1 /* Sources */,
 				872B02B81672A73B003613A1 /* Resources */,
 				872B02B71672A73B003613A1 /* Frameworks */,
+				5C6CE5771F03C4FF002C7A1B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
