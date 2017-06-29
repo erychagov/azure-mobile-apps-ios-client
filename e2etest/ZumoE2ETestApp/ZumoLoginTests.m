@@ -282,7 +282,7 @@ typedef enum { ZumoTableAnonymous, ZumoTableAuthenticated } ZumoTableType;
 }
 
 + (ZumoTest *)createClientSideLoginWithAAD {
-      return [ZumoTest createTestWithName:[NSString stringWithFormat:@"Login via token for AAD"] andExecution:^(ZumoTest *test, UIViewController *viewController, ZumoTestCompletion completion) {
+      ZumoTest *result = [ZumoTest createTestWithName:[NSString stringWithFormat:@"Login via token for AAD"] andExecution:^(ZumoTest *test, UIViewController *viewController, ZumoTestCompletion completion) {
         NSString *authority = @"https://login.windows.net/dihei-e2e-app.onmicrosoft.com";
         NSString *resourceId = @"/subscriptions/28634e38-c909-4b99-89aa-60b54da1c2cc/resourceGroups/dihei-e2e-rg/providers/Microsoft.Web/sites/dihei-e2e-app";
 //        NSString *clientId = @"8d8b5207-e2d8-4402-a081-53149d056cfd";
@@ -321,7 +321,8 @@ typedef enum { ZumoTableAnonymous, ZumoTableAuthenticated } ZumoTableType;
                                 }
                               }];
     }];
-  }
+  return result;
+}
 
 #pragma clang diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
