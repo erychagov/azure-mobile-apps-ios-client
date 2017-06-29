@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0044609E1C84D96600CB5A0F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0044609D1C84D96600CB5A0F /* WebKit.framework */; };
+		5C8C23F11F05304400526489 /* ADAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8C23E61F05303900526489 /* ADAL.framework */; };
+		5C8C23F21F05304400526489 /* ADAL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8C23E61F05303900526489 /* ADAL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		872B02BF1672A73B003613A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02BE1672A73B003613A1 /* UIKit.framework */; };
 		872B02C11672A73B003613A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02C01672A73B003613A1 /* Foundation.framework */; };
 		872B02C31672A73B003613A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02C21672A73B003613A1 /* CoreGraphics.framework */; };
@@ -41,8 +43,73 @@
 		A2EB9E40199543E30032B8BC /* ZumoConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EB9E3F199543E30032B8BC /* ZumoConfigurationViewController.m */; };
 		A37A1C7A1C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37A1C791C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework */; };
 		A3AD0B6D1BED91F900288E3D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AD0B6C1BED91F900288E3D /* Launch Screen.storyboard */; };
-		F8A40CF71F05208400053DC0 /* ADAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A40CF61F05208400053DC0 /* ADAL.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C8C23E11F05303900526489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B0965AA17F25770002BDFB8;
+			remoteInfo = ADALiOS;
+		};
+		5C8C23E31F05303900526489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D664F1B41D302B9C0017B799;
+			remoteInfo = "ADAL-core";
+		};
+		5C8C23E51F05303900526489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9453C3CC1C583E07006B9E79;
+			remoteInfo = ADAL;
+		};
+		5C8C23E71F05303900526489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B0965BA17F25770002BDFB8;
+			remoteInfo = ADALiOSTests;
+		};
+		5C8C23E91F05303900526489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9453C3FD1C586425006B9E79;
+			remoteInfo = "ADAL Mac";
+		};
+		5C8C23EB1F05303900526489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 94DD18E11C5ACFBF00F80C62;
+			remoteInfo = "ADAL Mac Tests";
+		};
+		5C8C23ED1F05303900526489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04AB6D421D9D619B007E9A83;
+			remoteInfo = UnitTestHostApp;
+		};
+		5C8C23EF1F05303900526489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D64C1F481DB9B05900850036;
+			remoteInfo = ADALAutomation;
+		};
+		5C8C23F31F05304400526489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9453C3CB1C583E07006B9E79;
+			remoteInfo = ADAL;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F855886A1F051AF50029CCE3 /* Embed Frameworks */ = {
@@ -51,6 +118,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5C8C23F21F05304400526489 /* ADAL.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +127,7 @@
 
 /* Begin PBXFileReference section */
 		0044609D1C84D96600CB5A0F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5C8C23D51F05303800526489 /* ADAL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ADAL.xcodeproj; path = ../external/adal/ADAL/ADAL.xcodeproj; sourceTree = "<group>"; };
 		806A17C41EEAA18100230146 /* ZumoE2ETestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZumoE2ETestApp.entitlements; sourceTree = "<group>"; };
 		872B02BA1672A73B003613A1 /* ZumoE2ETestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZumoE2ETestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872B02BE1672A73B003613A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -129,7 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8A40CF71F05208400053DC0 /* ADAL.framework in Frameworks */,
+				5C8C23F11F05304400526489 /* ADAL.framework in Frameworks */,
 				0044609E1C84D96600CB5A0F /* WebKit.framework in Frameworks */,
 				A37A1C7A1C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework in Frameworks */,
 				A2B509DD199ABF1A00A914CF /* MessageUI.framework in Frameworks */,
@@ -142,9 +211,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C8C23D61F05303800526489 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C8C23E21F05303900526489 /* libADALiOS.a */,
+				5C8C23E41F05303900526489 /* libADAL-core.a */,
+				5C8C23E61F05303900526489 /* ADAL.framework */,
+				5C8C23E81F05303900526489 /* ADALiOSTests.xctest */,
+				5C8C23EA1F05303900526489 /* ADAL.framework */,
+				5C8C23EC1F05303900526489 /* ADAL Mac Tests.xctest */,
+				5C8C23EE1F05303900526489 /* UnitTestHostApp.app */,
+				5C8C23F01F05303900526489 /* ADALAutomation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		872B02AF1672A73B003613A1 = {
 			isa = PBXGroup;
 			children = (
+				5C8C23D51F05303800526489 /* ADAL.xcodeproj */,
 				872B02C41672A73B003613A1 /* ZumoE2ETestApp */,
 				872B02BD1672A73B003613A1 /* Frameworks */,
 				872B02BB1672A73B003613A1 /* Products */,
@@ -291,6 +376,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5C8C23F41F05304400526489 /* PBXTargetDependency */,
 			);
 			name = ZumoE2ETestApp;
 			productName = ZumoE2ETestApp;
@@ -308,6 +394,7 @@
 				ORGANIZATIONNAME = Microsoft;
 				TargetAttributes = {
 					872B02B91672A73B003613A1 = {
+						DevelopmentTeam = 285W24646W;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -328,12 +415,77 @@
 			mainGroup = 872B02AF1672A73B003613A1;
 			productRefGroup = 872B02BB1672A73B003613A1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5C8C23D61F05303800526489 /* Products */;
+					ProjectRef = 5C8C23D51F05303800526489 /* ADAL.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				872B02B91672A73B003613A1 /* ZumoE2ETestApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5C8C23E21F05303900526489 /* libADALiOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libADALiOS.a;
+			remoteRef = 5C8C23E11F05303900526489 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C8C23E41F05303900526489 /* libADAL-core.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libADAL-core.a";
+			remoteRef = 5C8C23E31F05303900526489 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C8C23E61F05303900526489 /* ADAL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ADAL.framework;
+			remoteRef = 5C8C23E51F05303900526489 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C8C23E81F05303900526489 /* ADALiOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ADALiOSTests.xctest;
+			remoteRef = 5C8C23E71F05303900526489 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C8C23EA1F05303900526489 /* ADAL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ADAL.framework;
+			remoteRef = 5C8C23E91F05303900526489 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C8C23EC1F05303900526489 /* ADAL Mac Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ADAL Mac Tests.xctest";
+			remoteRef = 5C8C23EB1F05303900526489 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C8C23EE1F05303900526489 /* UnitTestHostApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = UnitTestHostApp.app;
+			remoteRef = 5C8C23ED1F05303900526489 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5C8C23F01F05303900526489 /* ADALAutomation.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ADALAutomation.app;
+			remoteRef = 5C8C23EF1F05303900526489 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		872B02B81672A73B003613A1 /* Resources */ = {
@@ -382,6 +534,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C8C23F41F05304400526489 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ADAL;
+			targetProxy = 5C8C23F31F05304400526489 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		872B02C71672A73B003613A1 /* InfoPlist.strings */ = {
@@ -481,8 +641,9 @@
 				CODE_SIGN_ENTITLEMENTS = ZumoE2ETestApp/ZumoE2ETestApp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 285W24646W;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../external/adal/ADAL/**",
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
@@ -510,8 +671,9 @@
 				CODE_SIGN_ENTITLEMENTS = ZumoE2ETestApp/ZumoE2ETestApp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 285W24646W;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../external/adal/ADAL/**",
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",

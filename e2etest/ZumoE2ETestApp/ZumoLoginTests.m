@@ -50,31 +50,29 @@ typedef enum { ZumoTableAnonymous, ZumoTableAuthenticated } ZumoTableType;
 
 + (NSArray *)createTests {
     NSMutableArray *result = [[NSMutableArray alloc] init];
-//    [result addObject:[self createClearAuthCookiesTest]];
-//    [result addObject:[self createLogoutTest]];
-//    [result addObject:[self createCRUDTestForProvider:nil forTable:@"public" ofType:ZumoTableAnonymous andAuthenticated:NO]];
-//    [result addObject:[self createCRUDTestForProvider:nil forTable:@"authenticated" ofType:ZumoTableAuthenticated andAuthenticated:NO]];
+    [result addObject:[self createClearAuthCookiesTest]];
+    [result addObject:[self createLogoutTest]];
+    [result addObject:[self createCRUDTestForProvider:nil forTable:@"public" ofType:ZumoTableAnonymous andAuthenticated:NO]];
+    [result addObject:[self createCRUDTestForProvider:nil forTable:@"authenticated" ofType:ZumoTableAuthenticated andAuthenticated:NO]];
 
     NSInteger indexOfLastUnattendedTest = [result count];
     
-//    result = [self createServerLoginFlowAndClientLoginFlowForProvider:@"facebook" tests:result];
-//    
-//    result = [self createServerLoginFlowAndClientLoginFlowForProvider:@"twitter" tests:result];
-//    
-//    result = [self createServerLoginRefreshTokenFlowForProvider:@"microsoftaccount" tests:result];
-//
-//    result = [self createServerLoginRefreshTokenFlowForProvider:@"aad" tests:result];
-//    
-//    result = [self createServerLoginRefreshTokenFlowForProvider:@"google" tests:result];
+    result = [self createServerLoginFlowAndClientLoginFlowForProvider:@"facebook" tests:result];
+    
+    result = [self createServerLoginFlowAndClientLoginFlowForProvider:@"twitter" tests:result];
+    
+    result = [self createServerLoginRefreshTokenFlowForProvider:@"microsoftaccount" tests:result];
 
-    [result addObject:[self createClientSideLoginWithAAD]];
+    result = [self createAADLoginTests:result];
+
+    result = [self createServerLoginRefreshTokenFlowForProvider:@"google" tests:result];
 
     for (NSInteger i = indexOfLastUnattendedTest; i < [result count]; i++) {
         ZumoTest *test = result[i];
         [test setCanRunUnattended:NO];
     }
     
-//    [result addObject:[self createLogoutTest]];
+    [result addObject:[self createLogoutTest]];
 
     return result;
 }
@@ -281,17 +279,25 @@ typedef enum { ZumoTableAnonymous, ZumoTableAuthenticated } ZumoTableType;
     }];
 }
 
++ (NSMutableArray *)createAADLoginTests:(NSMutableArray *)tests {
+  tests = [self createServerLoginRefreshTokenFlowForProvider:@"aad" tests:tests];
+  [tests addObject:[self createClientSideLoginWithAAD]];
+  return tests;
+}
+
 + (ZumoTest *)createClientSideLoginWithAAD {
       ZumoTest *result = [ZumoTest createTestWithName:[NSString stringWithFormat:@"Login via token for AAD"] andExecution:^(ZumoTest *test, UIViewController *viewController, ZumoTestCompletion completion) {
-        NSString *authority = @"https://login.windows.net/dihei-e2e-app.onmicrosoft.com";
-        NSString *resourceId = @"/subscriptions/28634e38-c909-4b99-89aa-60b54da1c2cc/resourceGroups/dihei-e2e-rg/providers/Microsoft.Web/sites/dihei-e2e-app";
-//        NSString *clientId = @"8d8b5207-e2d8-4402-a081-53149d056cfd";
+        NSString *authority = @"https://login.windows.net/azuremobile.onmicrosoft.com";
+        NSString *resourceId = @"00000002-0000-0000-c000-000000000000";
         NSString *clientId = @"486a3dbd-b102-4348-b68c-7d0d7deb4dc3";
-        NSURL *redirectUri = [[NSURL alloc] initWithString:@"https://dihei-e2e-app.azurewebsites.net/.auth/login/done"];
+
+        // Take last used url.
+        NSArray *lastUsedApp = [[ZumoTestGlobals sharedInstance] loadAppInfo];
+        NSString *fullUrl = [NSString stringWithFormat:@"%@/.auth/login/done", [lastUsedApp objectAtIndex:0]];
+        NSURL *redirectUri = [NSURL URLWithString:fullUrl];
 
         ZumoAppDelegate *appDelegate = ((ZumoAppDelegate*)(UIApplication.sharedApplication.delegate));
         UIViewController *parentViewController = ((UINavigationController *)(appDelegate.window.rootViewController)).topViewController;
-
         ADAuthenticationError *error;
         ADAuthenticationContext *authContext = [ADAuthenticationContext authenticationContextWithAuthority:authority error:&error];
         authContext.parentController = parentViewController;
